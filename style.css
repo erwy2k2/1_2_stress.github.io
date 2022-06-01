@@ -1,0 +1,126 @@
+body {
+    background-color: black;
+}
+.titre {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    font-size:30px;
+    font-weight: bold;
+    font-family: Monoton;
+    color: beige;
+    position: absolute;
+
+
+    margin-bottom: -10px;
+}
+.crystal {
+    width: 100%;
+
+    margin: 0px;
+    padding: 0px;
+}
+.crystal img {
+width: 100%;
+object-fit: cover;
+margin: 0px;
+max-height: 984px;
+}
+.soustitre {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    height: fit-content;
+    padding: 0px;
+    margin: 0px;
+    margin-top: -100px;
+    
+
+}
+.soustitre h2 {
+    font-family: Kalam;
+    font-size: 40px;
+    color: pink;
+    margin-bottom: -10px;
+
+       
+}
+.soustitre h3 {
+    font-family: Kalam;
+    color: #984b72;
+    font-size: 30px;
+    letter-spacing: 5px;
+    margin-top: 0px;
+ 
+    
+
+}
+a {
+    text-decoration: none;
+    color: white;
+}
+.cards {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+   
+
+}
+.cards__item {
+    margin: auto;
+    width: 80%;
+    border: 14px double pink;
+    border-radius: 40px;
+    margin-bottom: 50px;
+    height: 500px;
+    background-color: #984b72;
+    box-shadow: 2px 2px 15px white;
+    max-width: 355px;
+  
+ 
+
+}
+.cards__number {
+    font-size: 50px;
+    display: flex;
+    font-family: 'Monoton', cursive;
+    padding: 30px;
+    justify-content: center;
+    align-items: center;
+}
+.cards__title {
+    font-size: 40px;
+    font-family:Kalam;
+    padding: 10px;
+    padding-left: 0px;
+    border-bottom: solid pink 1px;
+    width: 98%;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+   
+}
+.cards__crystal--spin {
+    animation: spin 7s ease-in-out alternate infinite;
+    width: 100%;
+    margin: auto;
+    margin-top: 60px;
+}
+.cards__crystal--spin img {
+    width: 100%;
+  
+    object-fit: cover;
+   
+    height: 150px;
+}
+@keyframes spin {
+    0% {
+        transform: rotate(0turn);
+    }
+    100% {
+        transform: rotate(2turn);
+    }
+}
