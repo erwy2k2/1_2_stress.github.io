@@ -1,5 +1,12 @@
+* {
+    transition: all 0.5s ease-out;
+}
+
+
 body {
     background-color: black;
+
+
 }
 .titre {
     display: flex;
@@ -8,23 +15,29 @@ body {
     font-size:30px;
     font-weight: bold;
     font-family: Monoton;
-    color: beige;
     position: absolute;
+    z-index: 1;
 
+    color: pink;
 
-    margin-bottom: -10px;
+    margin-bottom: 0px;
+
 }
 .crystal {
     width: 100%;
-
-    margin: 0px;
+    max-width: 980px;
+    margin: auto;
     padding: 0px;
+
+  
+
 }
 .crystal img {
 width: 100%;
 object-fit: cover;
 margin: 0px;
 max-height: 984px;
+animation: pulse 7s infinite ease alternate-reverse;
 }
 .soustitre {
     display: flex;
@@ -32,17 +45,19 @@ max-height: 984px;
     flex-direction: column;
     align-items: center;
     height: fit-content;
-    padding: 0px;
-    margin: 0px;
-    margin-top: -100px;
+    margin-top: -70px;
+    margin-bottom: 100px;
+    animation: pulse 7s infinite ease alternate-reverse;
+}
     
 
-}
+
 .soustitre h2 {
     font-family: Kalam;
     font-size: 40px;
     color: pink;
     margin-bottom: -10px;
+  
 
        
 }
@@ -60,35 +75,102 @@ a {
     text-decoration: none;
     color: white;
 }
-.cards {
+
+.cards__flip {
+
+
+
+    height: 500px;
+   display: flex;
+   
+    max-width: 355px;
+    background-color: transparent;
+    perspective: 1000px;
+    margin: auto;
+    margin-top: 140px;
+  
+}
+.cards__flip--inner {
+
+    position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+  border: 14px double pink;
+  border-radius: 40px;
+  background-color: #984b72;
+  box-shadow: 2px 2px 15px white;
+ 
+}
+.cards__flip:hover .cards__flip--inner {
+    transform: rotateY(180deg);
+}
+.cards__front, .cards__back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden; /* Safari */
+    backface-visibility: hidden;
+}
+.cards__front {
+    color: white;
+}
+.cards__back {
+    transform: rotateY(180deg);
     display: flex;
     flex-direction: column;
-    align-items: center;
-    width: 100%;
-   
-
+    color: white;
 }
-.cards__item {
-    margin: auto;
-    width: 80%;
-    border: 14px double pink;
-    border-radius: 40px;
-    margin-bottom: 50px;
-    height: 500px;
-    background-color: #984b72;
-    box-shadow: 2px 2px 15px white;
-    max-width: 355px;
-  
+.cards__back h2 {
+    height: 27%;
+}
+.cards__back p {
+    height: 15%;
+}
+.cards__back h2 {
+    justify-content: flex-start;
+}
+.cards__back p {
+    justify-content: space-around;
+}
+.cards__button--link {
+    width: 40%;
  
+    margin-left: auto;
+    margin-right: auto;
+}
+.cards__button {
+    width: 100%;
+    border-radius: 20px;
+    border: 3px white outset ;
+    background-color: black;
+    color: white;
+    padding: 10px;
+    font-size: 16px;
+}
+.cards__button:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+    box-shadow: 2px 2px 5px black ;
+}
+.cards__number--container {
+    width: 90px;
+    margin: auto;
+    margin-top: 90px;
+    
 
 }
 .cards__number {
     font-size: 50px;
     display: flex;
     font-family: 'Monoton', cursive;
-    padding: 30px;
+    border: 2px solid white;
+    border-radius: 50px;
     justify-content: center;
-    align-items: center;
+    padding-bottom: 6px;
+ 
 }
 .cards__title {
     font-size: 40px;
@@ -110,17 +192,182 @@ a {
     margin-top: 60px;
 }
 .cards__crystal--spin img {
-    width: 100%;
-  
+    width: 80%;
     object-fit: cover;
-   
     height: 150px;
 }
+.footer {
+    border-top: #984b72 2px solid;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height: 300px;
+    margin-top: 200px;
+    width: 100%;
+}
+.footer h3 {
+    color: white;
+    font-size: 30px;
+    margin-left: 20px;
+    margin-top: 150px;
+}
+.footer__list {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    
+}
+.footer__item {
+border: 1px solid white ;
+padding: 15px;
+background-color: #984b72;
+border-radius: 15px;
+width: 150px;
+margin-bottom: 20px;
+margin-left: -150px;
+
+}
+.footer__item a  {
+   color: white;
+   font-size: 20px;
+   text-align: center;
+}
+.footer__item:hover {
+    cursor: pointer;
+    box-shadow: 2px 2px 5px white;
+    transform: scale(1.1);
+    margin-left: -30px;
+  
+
+}
+
+
+@media (orientation: landscape) {
+    .titre {
+        font-size: 80px;
+    }
+    .soustitre {
+        margin-top: -250px;
+    }
+    .soustitre h2 {
+        font-size: 70px;
+    }
+    .soustitre h3 {
+        font-size: 50px;
+    
+    }
+    .cards__flip {
+        min-width: 250px;
+        max-height: 350px;
+
+   
+    }
+    section {
+        display: flex;
+        justify-content: space-evenly;
+    }
+    .cards__title {
+         
+      font-size: 25px;
+    }
+     .cards__crystal--spin {
+         margin-top: 30px;
+     }
+
+     .cards__number--container {
+        margin-top: 30px;
+    }
+    .cards__number {
+        font-size: 30px;
+        padding: 5px;
+        margin: auto;
+        width: 55%;
+    }
+    .cards__crystal--spin img {
+        width: 100%;
+    }
+    #card1 {
+        margin-top: -270px;
+    }
+    #card2 {
+        margin-top: -50px;
+    }
+    #card3 {
+        margin-top: -270px;
+    }
+    
+}
+@media (min-width:1300px) {
+    .cards__flip {
+     min-width: 350px;
+     max-height: 500px;
+
+    }
+    
+    section {
+        display: flex;
+        justify-content: space-evenly;
+    }
+    .cards__title {
+         
+        font-size: 35px;
+      }
+      .cards__crystal--spin {
+        margin-top: 60px;
+    }
+      .cards__crystal--spin img {
+        width: 90%;
+    }
+    .cards__number--container {
+        margin-top: 90px;
+    }
+    .cards__number {
+        font-size: 50px;
+        margin: auto;
+        width: 90%;
+    }
+
+
+}
+
 @keyframes spin {
     0% {
         transform: rotate(0turn);
     }
     100% {
         transform: rotate(2turn);
+    }
+}
+@keyframes pulse {
+    0% {
+        transform: scale(0.9)
+    }
+    25% {
+        transform: scale(1.1);
+
+    }
+    50% {
+        transform: scale(1.0);
+    
+    }
+    100% {
+        transform: scale(1.2);
+    }
+}
+@keyframes glow {
+    0% {
+        text-shadow: 0px 0px 0px;
+    }
+    25% {
+        text-shadow: 2px 2px 4px whitesmoke;
+
+    }
+    50% {
+        text-shadow: 0px 0px 6px salmon;
+    
+    }
+    100% {
+        text-shadow: 4px 4px 6px whitesmoke;
     }
 }
